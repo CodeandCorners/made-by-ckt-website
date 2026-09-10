@@ -9,7 +9,7 @@ import { site } from './src/site.config.ts';
 
 // https://astro.build/config
 export default defineConfig({
-  // sitemap / RSS / canonical URL の絶対化に使う。デプロイ先に合わせて site.config.ts で変更する
+  // Used to create absolute sitemap, RSS, and canonical URLs. Change it in site.config.ts.
   site: site.url,
   integrations: [mdx(), sitemap()],
   vite: {

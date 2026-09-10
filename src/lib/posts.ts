@@ -2,7 +2,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type Post = CollectionEntry<'blog'>;
 
-/** タグ・パス用の slug 化。空白→ハイフン、英数とハイフンのみに正規化 */
+/** Create a slug for tags and paths using lowercase letters, numbers, and hyphens. */
 export function slugify(value: string): string {
 	return value
 		.toLowerCase()
@@ -11,15 +11,15 @@ export function slugify(value: string): string {
 		.replace(/(^-|-$)+/g, '');
 }
 
-/** 本文の語数から読了時間（分）を概算する。remark 非依存 */
+/** Estimate reading time in minutes from the body word count. */
 export function readingTime(body: string | undefined): number {
 	const words = (body ?? '').trim().split(/\s+/).filter(Boolean).length;
 	return Math.max(1, Math.round(words / 200));
 }
 
 /**
- * 公開記事を新しい順で返す。
- * draft は本番ビルド（PROD）でのみ除外し、開発時は下書きも見える。
+ * Return published posts in reverse chronological order.
+ * Drafts are hidden only in production builds and remain visible during development.
  */
 export async function getPublishedPosts(): Promise<Post[]> {
 	const posts = await getCollection('blog', ({ data }) =>
@@ -34,7 +34,7 @@ export interface TagInfo {
 	count: number;
 }
 
-/** 全記事から出現タグを集計し、記事数の多い順に返す */
+/** Collect tags from all posts and sort them by post count. */
 export function collectTags(posts: Post[]): TagInfo[] {
 	const map = new Map<string, TagInfo>();
 	for (const post of posts) {

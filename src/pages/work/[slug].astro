@@ -10,7 +10,7 @@ export const getStaticPaths = (async () => {
 		params: { slug: project.id },
 		props: {
 			project,
-			// 一覧の並び順で次のプロジェクト（末尾は先頭へループ）
+			// Find the next project in list order and wrap from the last item to the first.
 			next: projects[(i + 1) % projects.length],
 		},
 	}));

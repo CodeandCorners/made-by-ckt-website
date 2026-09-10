@@ -2,7 +2,7 @@
 interface Props {
 	currentPage: number;
 	lastPage: number;
-	/** ページ1のパス。2ページ目以降は `${base}/2` を生成する */
+	/** Base path for page one; later pages use `${base}/2`, for example. */
 	base?: string;
 }
 

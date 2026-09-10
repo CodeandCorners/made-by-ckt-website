@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
-/*
- * Kepler design tokens — docs/design/design-spec.md に忠実に。
- * 色相は navy / orange の2系統＋暖色ニュートラルのみ。第3の色相を足さない。
- */
+
 @theme {
   /* Colors */
   --color-navy: #1e3a8a; /* primary brand, dark sections, headings on light */
@@ -24,14 +21,14 @@
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
 
-  /* Hard offset shadows — comic/pop feel. ぼかしは使わない */
+  /* Hard offset shadows — comic/pop feel. No blur is used. */
   --shadow-pop-sm: 3px 3px 0 var(--color-ink);
   --shadow-pop: 6px 6px 0 var(--color-ink);
   --shadow-pop-lg: 8px 8px 0 var(--color-ink);
   --shadow-pop-orange: 6px 6px 0 var(--color-orange);
   --shadow-pop-white: 5px 5px 0 var(--color-cloud);
 
-  /* Radii — chunky: cards 14–20px, buttons pill(999px は rounded-full を使う) */
+  /* Radii — chunky: cards 14–20px, buttons use rounded-full for pills (999px). */
   --radius-card: 20px;
   --radius-tile: 16px;
   --radius-chip: 14px;
@@ -47,12 +44,14 @@
       transform: rotate(360deg);
     }
   }
+
   @keyframes orbit-spin-rev {
     to {
       transform: rotate(-360deg);
     }
   }
-  /* ステッカーのドリフト。回転角は要素側の --r で指定する */
+
+  /* Sticker drifting animation. Rotation angle is specified by --r on the element. */
   @keyframes drift {
     0%,
     100% {
@@ -62,6 +61,7 @@
       transform: translateY(-14px) rotate(var(--r, 0deg));
     }
   }
+
   @keyframes drift-alt {
     0%,
     100% {
@@ -101,8 +101,8 @@
 }
 
 /*
- * 記事本文（Markdown/MDX）のタイポグラフィ。
- * デザイントークンに準拠し、ハードシャドウ等のポップ調をブログでも保つ。
+ * Typography for article content (Markdown/MDX).
+ * Follows the design tokens and keeps the pop/comic style throughout the blog.
  */
 @layer components {
   .prose {
@@ -122,14 +122,17 @@
     letter-spacing: -0.02em;
     line-height: 1.25;
   }
+
   .prose h2 {
     margin-top: 2em;
     font-size: 1.6rem;
   }
+
   .prose h3 {
     margin-top: 1.6em;
     font-size: 1.3rem;
   }
+
   .prose h2 + *,
   .prose h3 + *,
   .prose h4 + * {
@@ -143,6 +146,7 @@
     text-underline-offset: 2px;
     text-decoration-thickness: 2px;
   }
+
   .prose a:hover {
     color: var(--color-orange);
   }
@@ -156,15 +160,19 @@
   .prose ol {
     padding-left: 1.4em;
   }
+
   .prose ul {
     list-style: disc;
   }
+
   .prose ol {
     list-style: decimal;
   }
+
   .prose li::marker {
     color: var(--color-orange);
   }
+
   .prose li + li {
     margin-top: 0.4em;
   }
@@ -178,7 +186,7 @@
     color: var(--color-ink);
   }
 
-  /* インラインコード */
+  /* Inline code */
   .prose :not(pre) > code {
     background: var(--color-orange-soft);
     color: var(--color-orange-deep);
@@ -188,7 +196,7 @@
     font-weight: 600;
   }
 
-  /* コードブロック（Shiki が背景色を付与するので枠・余白のみ担当） */
+  /* Code blocks (Shiki provides the background color, so this only handles borders and spacing) */
   .prose pre {
     border: 2px solid var(--color-ink);
     border-radius: var(--radius-tile);

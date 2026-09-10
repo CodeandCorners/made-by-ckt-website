@@ -164,7 +164,7 @@ const tiers = [
 </section>
 
 <script>
-	// 料金トグル: Monthly/Yearly で価格と /mo・/yr を切り替える
+	// Toggle prices and the /mo or /yr label between monthly and yearly plans.
 	const toggle = document.getElementById('billing-toggle');
 	const buttons = toggle?.querySelectorAll<HTMLButtonElement>('button[data-period]') ?? [];
 	const activeClasses = ['bg-navy', 'text-cloud'];

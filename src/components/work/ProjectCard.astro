@@ -11,7 +11,7 @@ interface Props {
 const { project, index = 0 } = Astro.props;
 const { title, description, category, tech, year, thumbnail } = project.data;
 
-// サムネイル未設定時のプレースホルダ配色（navy 系 / orange 系を交互に）
+// Alternate navy and orange placeholder colours when no thumbnail is set.
 const themes = [
 	'linear-gradient(135deg, #1e3a8a, #152a63)',
 	'linear-gradient(135deg, #fb923c, #ea580c)',

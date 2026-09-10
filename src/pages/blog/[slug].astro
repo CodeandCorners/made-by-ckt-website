@@ -10,7 +10,7 @@ export const getStaticPaths = (async () => {
 		params: { slug: post.id },
 		props: {
 			post,
-			// posts は新しい順。older = 次の要素、newer = 前の要素
+			// Posts are newest first, so older is the next item and newer is the previous item.
 			prev: posts[i + 1],
 			next: posts[i - 1],
 		},

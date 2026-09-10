@@ -4,8 +4,8 @@ import { slugify } from './posts';
 export type Project = CollectionEntry<'work'>;
 
 /**
- * 公開プロジェクトを表示順で返す。
- * order 昇順 → 同値なら year 降順。draft は本番ビルドでのみ除外。
+ * Return published projects in display order.
+ * Sort by ascending order, then descending year. Drafts are hidden only in production.
  */
 export async function getPublishedProjects(): Promise<Project[]> {
 	const projects = await getCollection('work', ({ data }) =>
@@ -20,7 +20,7 @@ export interface CategoryInfo {
 	count: number;
 }
 
-/** 出現カテゴリを件数付きで返す（件数の多い順 → 名前順） */
+/** Collect categories with counts and sort by count, then name. */
 export function collectCategories(projects: Project[]): CategoryInfo[] {
 	const map = new Map<string, CategoryInfo>();
 	for (const project of projects) {

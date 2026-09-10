@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro';
 
-// LP のセクションへは絶対パス付きアンカーにして、ブログ等の下層ページからも辿れるようにする
+// Use root-relative anchors so landing-page sections work from nested pages.
 const links = [
 	{ href: '/#features', label: 'Features' },
 	{ href: '/#showcase', label: 'Showcase' },
@@ -22,13 +22,6 @@ const links = [
 			{links.map((link) => <a href={link.href} class="text-sky hover:text-orange">{link.label}</a>)}
 		</div>
 		<div class="ml-auto flex items-center gap-3.5">
-			<a href="/search" aria-label="Search" class="text-sky hover:text-orange">
-				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-					<circle cx="11" cy="11" r="7"></circle>
-					<line x1="21" y1="21" x2="16.5" y2="16.5"></line>
-				</svg>
-			</a>
-			<a href="#" class="hidden text-[15px] font-semibold text-cloud hover:text-orange sm:inline">Sign in</a>
 			<a
 				href="/#pricing"
 				class="rounded-full bg-orange px-5 py-2.5 text-[15px] font-bold text-cloud shadow-[3px_3px_0_var(--color-cloud)] transition-[transform,box-shadow] hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--color-cloud)]"
@@ -39,7 +32,7 @@ const links = [
 </nav>
 
 <script>
-	// スクロール時にシャドウを付ける（プロトタイプ: scrollY > 8 で 0 6px 20px rgba(15,30,66,.25)）
+	// Add a shadow after the page has been scrolled slightly.
 	const nav = document.getElementById('site-nav');
 	const onScroll = () => {
 		if (!nav) return;

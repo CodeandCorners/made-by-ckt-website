@@ -1,21 +1,21 @@
 ---
 /*
- * SEO / OGP メタタグを一括出力する。<head> 内で使う。
- * canonical は site.url + 現在パスから自動生成する。
+ * Render SEO and Open Graph meta tags for the document head.
+ * The canonical URL is generated from site.url and the current path.
  */
 import { site } from '../site.config';
 
 interface Props {
-	/** ページ固有タイトル。未指定ならサイトのフルタイトルを使う */
+	/** Page-specific title. Uses the full site title when omitted. */
 	title?: string;
 	description?: string;
-	/** OGP 画像（絶対 URL もしくはサイトルート基準の絶対パス） */
+	/** Open Graph image as an absolute URL or site-root-relative path. */
 	image?: string;
-	/** og:type。記事なら 'article' */
+	/** Open Graph type. Use 'article' for article pages. */
 	type?: 'website' | 'article';
-	/** noindex を付けたいページ用 */
+	/** Set noindex for pages that should not be indexed. */
 	noindex?: boolean;
-	/** 記事メタ（type='article' のとき） */
+	/** Article metadata used when type is 'article'. */
 	article?: {
 		publishedTime?: Date;
 		modifiedTime?: Date;
@@ -33,10 +33,10 @@ const {
 	article,
 } = Astro.props;
 
-// タイトル: 指定があればテンプレートを適用、なければサイトのフルタイトル
+// Apply the title template when a page-specific title is provided.
 const fullTitle = title ? site.titleTemplate.replace('%s', title) : site.title;
 
-// canonical / OGP 用の絶対 URL。Astro.site が未設定でも壊れないようフォールバック
+// Fall back to site.config when Astro.site is not configured.
 const baseUrl = Astro.site ?? new URL(site.url);
 const canonical = new URL(Astro.url.pathname, baseUrl).href.replace(/(?<!:)\/{2,}/g, '/');
 const ogImage = image ? new URL(image, baseUrl).href : undefined;
@@ -56,7 +56,7 @@ const ogImage = image ? new URL(image, baseUrl).href : undefined;
 <meta property="og:locale" content={site.locale} />
 {ogImage && <meta property="og:image" content={ogImage} />}
 
-{/* article メタ */}
+{/* Article metadata */}
 {
 	type === 'article' && article && (
 		<>

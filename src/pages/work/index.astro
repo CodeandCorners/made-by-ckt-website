@@ -67,7 +67,7 @@ const categories = collectCategories(projects);
 </style>
 
 <script>
-	// カテゴリでプロジェクトを絞り込む。data-category と data-filter を突き合わせる
+	// Filter projects by matching each card's data-category to the selected filter.
 	const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
 	const cards = document.querySelectorAll<HTMLElement>('#project-grid [data-category]');
 	const noResults = document.getElementById('no-results');

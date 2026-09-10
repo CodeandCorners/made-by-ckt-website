@@ -59,7 +59,7 @@ const items = [
 </section>
 
 <script>
-	// アコーディオン: 一度に1つだけ開く（プロトタイプ準拠）
+	// Allow only one accordion item to be open at a time.
 	const list = document.getElementById('faq-list');
 	const toggles = list?.querySelectorAll<HTMLButtonElement>('[data-faq-toggle]') ?? [];
 

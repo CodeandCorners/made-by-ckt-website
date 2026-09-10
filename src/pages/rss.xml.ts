@@ -9,7 +9,7 @@ export async function GET(context: APIContext) {
 	return rss({
 		title: `${site.name} — Blog`,
 		description: site.description,
-		// astro.config の site を使う。未設定時はフォールバック
+		// Use the Astro config site, with a fallback when it is not configured.
 		site: context.site ?? site.url,
 		items: posts.map((post) => ({
 			title: post.data.title,

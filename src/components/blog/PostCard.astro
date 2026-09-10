@@ -5,7 +5,7 @@ import TagPill from './TagPill.astro';
 
 interface Props {
 	post: Post;
-	/** 交互に回転させるためのインデックス */
+	/** Index used to alternate the card rotation. */
 	index?: number;
 }
 
@@ -19,7 +19,7 @@ const dateLabel = pubDate.toLocaleDateString('en-US', {
 	day: 'numeric',
 });
 
-// カードを ±1.5° 傾け、hover で直立させる（landing と同じ所作）
+// Tilt cards by 1.5 degrees and straighten them on hover.
 const tilt = index % 2 === 0 ? '-rotate-[1.5deg]' : 'rotate-[1.5deg]';
 ---
 
