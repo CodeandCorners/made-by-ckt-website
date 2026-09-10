@@ -10,7 +10,7 @@ export const site = {
   name: 'Made by CKT',
 
   /** Full title used when no page-specific title is provided, such as on the homepage. */
-  title: 'Made by CKT',
+  title: 'Made by CKT 1',
 
   /** Title template. The page title is inserted where %s appears. */
   titleTemplate: '%s — Made by CKT',
