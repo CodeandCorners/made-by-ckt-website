@@ -1,6 +1,6 @@
 # Project Guide
 
-Astro website for Made by CKT, based on the Kepler theme.
+Astro website for Made by CKT.
 
 ## Structure
 

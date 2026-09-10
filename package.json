@@ -1,17 +1,17 @@
 {
-  "name": "astro-kepler",
+  "name": "made-by-ckt",
   "type": "module",
   "version": "0.1.0",
-  "description": "Kepler — a versatile Astro 7 theme for blogs, portfolios, and landing pages",
+  "description": "CKT Website",
   "license": "MIT",
-  "author": "kpab (https://github.com/kpab)",
-  "homepage": "https://astro-kepler.pages.dev",
+  "author": "Made by CKT",
+  "homepage": "https://madebyckt.com",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kpab/astro-kepler.git"
+    "url": "git+https://github.com/CodeandCorners/made-by-ckt-website.git"
   },
   "bugs": {
-    "url": "https://github.com/kpab/astro-kepler/issues"
+    "url": "https://github.com/CodeandCorners/made-by-ckt-website/issues"
   },
   "keywords": [
     "astro",

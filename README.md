@@ -19,6 +19,8 @@ npm install
 npm run dev
 ```
 
+
+
 You should see a local website address, usually:
 
 ```text
@@ -34,6 +36,15 @@ To stop the website, press:
 ```text
 Ctrl + C
 ```
+
+Get Live:
+
+```bash
+git add .
+git commit -m "I Changed: .."
+git push origin main
+```
+(deployment pipeline here https://github.com/CodeandCorners/made-by-ckt-website/actions)
 
 ## Making changes
 
