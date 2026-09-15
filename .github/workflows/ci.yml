@@ -24,10 +24,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Restore platform optional dependencies
-        run: npm install --no-save --ignore-scripts --include=optional --prefer-online
+        run: npm install
 
       - name: Check
         run: npm run check
