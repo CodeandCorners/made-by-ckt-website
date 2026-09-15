@@ -1,0 +1,34 @@
+---
+interface Props {
+  src: string;
+  id?: string;
+}
+
+const { src, id = 'pulse-mark' } = Astro.props;
+---
+
+<div id={id} class="lottie-mark" data-src={src} role="img" aria-label="Interactive waving person animation" tabindex="0"></div>
+
+<script>
+  import lottie from 'lottie-web';
+
+  // Each .lottie-mark div can point at a different JSON file via
+  // data-src, so this one component works for more than one animation
+  // if you add more later.
+  document.querySelectorAll<HTMLElement>('.lottie-mark').forEach((container) => {
+    const animation = lottie.loadAnimation({
+      container,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: container.dataset.src ?? '/lottie/pulse-mark.json',
+    });
+
+    container.addEventListener('pointerenter', () => animation.setSpeed(1.8));
+    container.addEventListener('pointerleave', () => animation.setSpeed(1));
+    container.addEventListener('click', () => animation.goToAndPlay(0, true));
+    container.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') animation.goToAndPlay(0, true);
+    });
+  });
+</script>

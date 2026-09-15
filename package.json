@@ -1,54 +1,15 @@
 {
-  "name": "made-by-ckt",
+  "name": "made-by-ckt-red",
   "type": "module",
   "version": "0.1.0",
-  "description": "CKT Website",
-  "license": "MIT",
-  "author": "Made by CKT",
-  "homepage": "https://madebyckt.com",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CodeandCorners/made-by-ckt-website.git"
-  },
-  "bugs": {
-    "url": "https://github.com/CodeandCorners/made-by-ckt-website/issues"
-  },
-  "keywords": [
-    "astro",
-    "astro-theme",
-    "astro-component",
-    "withastro",
-    "theme",
-    "blog",
-    "portfolio",
-    "landing-page",
-    "tailwindcss",
-    "typescript",
-    "mdx",
-    "starter",
-    "template"
-  ],
-  "packageManager": "pnpm@9.14.4",
-  "engines": {
-    "node": ">=22.12.0"
-  },
+  "private": true,
   "scripts": {
     "dev": "astro dev",
-    "check": "astro check",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.8",
-    "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.3",
-    "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.2.9",
-    "tailwindcss": "^4.3.3"
-  },
-  "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "typescript": "^6.0.3"
+    "astro": "^4.16.0",
+    "lottie-web": "^5.12.2"
   }
 }
