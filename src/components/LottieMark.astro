@@ -7,7 +7,7 @@ interface Props {
 const { src, id = 'pulse-mark' } = Astro.props;
 ---
 
-<div id={id} class="lottie-mark" data-src={src} role="img" aria-label="Interactive waving person animation" tabindex="0"></div>
+<div id={id} class="lottie-mark" data-src={src} role="button" aria-label="Replay the waving person animation" tabindex="0"></div>
 
 <script>
   import lottie from 'lottie-web';

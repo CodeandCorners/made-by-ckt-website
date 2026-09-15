@@ -95,7 +95,8 @@ svg {
 
 .site-nav a:focus-visible,
 .wordmark:focus-visible,
-.button:focus-visible {
+.button:focus-visible,
+.lottie-mark:focus-visible {
   outline: 3px solid var(--red-deep);
   outline-offset: 3px;
 }
@@ -142,6 +143,7 @@ svg {
 #pulse-mark {
   width: 220px;
   height: 220px;
+  cursor: pointer;
 }
 
 /* Buttons */
@@ -190,7 +192,7 @@ svg {
   }
 }
 
-.offerings h3 {
+.offerings h2 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.4rem;
