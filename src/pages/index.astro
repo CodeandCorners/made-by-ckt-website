@@ -1,20 +1,38 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/landing/Hero.astro';
-import Features from '../components/landing/Features.astro';
-import Showcase from '../components/landing/Showcase.astro';
-import Pricing from '../components/landing/Pricing.astro';
-import Testimonials from '../components/landing/Testimonials.astro';
-import Faq from '../components/landing/Faq.astro';
-import FinalCta from '../components/landing/FinalCta.astro';
+import Layout from '../layouts/Layout.astro';
+import LottieMark from '../components/LottieMark.astro';
 ---
 
-<BaseLayout>
-	<Hero />
-	<Features />
-	<Showcase />
-	<Pricing />
-	<Testimonials />
-	<Faq />
-	<FinalCta />
-</BaseLayout>
+<Layout title="Home" activePage="home">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>We build, test, and deploy.</h1>
+        <p>Apps, websites, and tools that work.</p>
+        <a class="button" href="/support">Get in touch</a>
+      </div>
+      <div class="mark-holder">
+        <LottieMark id="pulse-mark" src="/lottie/ai.json" />
+      </div>
+    </div>
+  </section>
+
+  <section class="offerings">
+    <div class="wrap">
+      <ul>
+        <li>
+          <h3>Build</h3>
+          <p>We build apps, websites, and tools.</p>
+        </li>
+        <li>
+          <h3>Test</h3>
+          <p>We test them properly.</p>
+        </li>
+        <li>
+          <h3>Deploy</h3>
+          <p>We deploy them for you.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Layout>
