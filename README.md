@@ -1,4 +1,4 @@
-# Made by CKT - red theme
+# Made by CKT
 
 A simple 3-page Astro site: home, about, support.
 
