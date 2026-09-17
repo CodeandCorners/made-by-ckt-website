@@ -1,22 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import LottieMark from '../components/LottieMark.astro';
 ---
 
 <Layout title="Home" activePage="home">
   <section class="hero">
+    <div class="hero-shapes" aria-hidden="true">
+      <span class="shape-blue"></span>
+      <span class="shape-pink"></span>
+      <span class="shape-pink-right"></span>
+      <span class="shape-left-pink"></span>
+      <span class="shape-left-blue"></span>
+      <span class="shape-peach"></span>
+    </div>
     <div class="wrap">
       <div>
-        <h1>Small studio. Sharp niches.</h1>
-        <p>
-          Made by CKT is a UK app studio that designs, builds, and ships apps
-          for pleasure and for business — the kind that serve a specific
-          niche properly, instead of trying to be everything to everyone.
-        </p>
-        <a class="button" href="/support">Get in touch</a>
+        <div class="accent-marks" aria-hidden="true">
+          <span class="m1"></span>
+          <span class="m2"></span>
+          <span class="m3"></span>
+        </div>
+        <h1>
+          Made by <span class="c">C</span><span class="k">K</span><span class="t">T</span>
+        </h1>
+        <p>Apps made with curiosity, creativity and a tiny bit of chaos</p>
+        <a class="button" href="#currently-building">Explore what&rsquo;s coming soon</a>
       </div>
-      <div class="mark-holder">
-        <LottieMark id="pulse-mark" src="/lottie/ai.json" />
+      <div class="hero-visual">
+        <img class="hero-image" src="/Logo2.PNG" alt="Made by CKT brand mark" />
       </div>
     </div>
   </section>
@@ -51,7 +61,7 @@ import LottieMark from '../components/LottieMark.astro';
     </div>
   </section>
 
-  <section class="offerings">
+  <section class="offerings" id="currently-building">
     <div class="wrap">
       <ul>
         <li>

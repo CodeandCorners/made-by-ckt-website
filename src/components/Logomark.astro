@@ -1,0 +1,36 @@
+---
+interface Props {
+  size?: number;
+  shadow?: boolean;
+}
+
+const { size = 48, shadow = false } = Astro.props;
+---
+
+<svg
+  class="logomark"
+  viewBox="0 0 240 240"
+  width={size}
+  height={size}
+  aria-hidden="true"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  {shadow && (
+    <g transform="translate(10,12)" opacity="0.16">
+      <circle cx="118" cy="128" r="92" fill="#141414" />
+      <polygon points="118,58 226,128 118,198" fill="#141414" />
+    </g>
+  )}
+  <circle cx="118" cy="128" r="92" fill="#F4A93D" stroke="#141414" stroke-width="6" />
+  <rect x="102" y="40" width="16" height="176" fill="#29ABE2" stroke="#141414" stroke-width="3" />
+  <rect x="88" y="40" width="150" height="14" fill="#141414" />
+  <polygon points="118,58 226,128 118,198" fill="#141414" />
+  <polygon points="118,68 210,128 118,188" fill="#E8407C" stroke="#141414" stroke-width="4" />
+</svg>
+
+<style>
+  .logomark {
+    flex-shrink: 0;
+    display: block;
+  }
+</style>

@@ -20,14 +20,16 @@ const { title, activePage } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;900&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="wordmark" href="/">Made by <span>CKT</span></a>
+        <a class="wordmark" href="/" aria-label="Made by CKT home">
+          <img src="/Logo.PNG" alt="Made by CKT logo" width="72" height="72" />
+        </a>
         <nav class="site-nav">
           <a href="/" aria-current={activePage === 'home' ? 'page' : undefined}>Home</a>
           <a href="/about" aria-current={activePage === 'about' ? 'page' : undefined}>About</a>
