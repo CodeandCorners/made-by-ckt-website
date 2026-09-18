@@ -3,7 +3,7 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
-  activePage: 'home' | 'about' | 'support';
+  activePage: 'home' | 'coming-soon' | 'about' | 'support';
 }
 
 const { title, activePage } = Astro.props;
@@ -20,7 +20,7 @@ const { title, activePage } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -28,10 +28,12 @@ const { title, activePage } = Astro.props;
     <header class="site-header">
       <div class="wrap">
         <a class="wordmark" href="/" aria-label="Made by CKT home">
-          <img src="/Logo.PNG" alt="Made by CKT logo" width="72" height="72" />
+          <img src="/Logo3.PNG" alt="Made by CKT logo" width="72" height="72" />
+          <span class="wordmark-text">Made by <span class="c">C</span><span class="k">K</span><span class="t">T</span></span>
         </a>
         <nav class="site-nav">
           <a href="/" aria-current={activePage === 'home' ? 'page' : undefined}>Home</a>
+          <a href="/coming-soon" aria-current={activePage === 'coming-soon' ? 'page' : undefined}>Coming Soon</a>
           <a href="/about" aria-current={activePage === 'about' ? 'page' : undefined}>About</a>
           <a href="/support" aria-current={activePage === 'support' ? 'page' : undefined}>Support</a>
         </nav>

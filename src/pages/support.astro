@@ -5,7 +5,14 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Support" activePage="support">
   <header class="page-header">
     <div class="wrap">
-      <h1>Support</h1>
+      <div class="page-header-content">
+        <div class="page-accent-marks" aria-hidden="true">
+          <span class="m3"></span>
+          <span class="m1"></span>
+          <span class="m2"></span>
+        </div>
+        <h1>Support <span class="title-ckt"><span class="c">C</span><span class="k">K</span><span class="t">T</span></span></h1>
+      </div>
     </div>
   </header>
 
@@ -23,6 +30,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <dl class="faq">
+      <dt class="faq-title">Frequently Asked Questions</dt>
       <dt>I've found a bug in one of your apps — what should I include?</dt>
       <dd>
         The app name and version, your device model and iOS version, and the

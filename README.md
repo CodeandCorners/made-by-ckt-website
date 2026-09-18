@@ -8,7 +8,10 @@ A simple 3-page Astro site: home, about, support.
 npm install
 npm run dev
 ```
-
+git status
+git add .
+git commit -m "changed design"
+git push origin main
 Then open http://localhost:4321
 
 ## Where things live
