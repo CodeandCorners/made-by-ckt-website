@@ -10,7 +10,7 @@
     "check": "astro check"
   },
   "dependencies": {
-    "astro": "^4.16.0",
+    "astro": "^7.3.3",
     "lottie-web": "^5.12.2"
   },
   "devDependencies": {
