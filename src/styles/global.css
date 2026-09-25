@@ -11,6 +11,7 @@
   --bg-peach: #fbe0c2;
   --line: rgba(20, 20, 20, 0.12);
   --rule-thickness: 1.5mm;
+  --page-gutter: clamp(1rem, 3vw, 2.5rem);
 
   --font-display: 'Open Sans', system-ui, sans-serif;
   --font-body: 'Open Sans', system-ui, sans-serif;
@@ -54,7 +55,8 @@ svg {
 .wrap {
   max-width: 78rem;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 3vw, 1.75rem);
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
 /* Header */
