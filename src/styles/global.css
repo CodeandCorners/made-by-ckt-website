@@ -592,6 +592,25 @@ svg {
   overflow: hidden;
 }
 
+.coming-soon-card::before,
+.coming-soon-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 2rem;
+  height: 100%;
+}
+
+.coming-soon-card::before {
+  left: 2rem;
+  background: rgba(41, 171, 226, 0.85);
+}
+
+.coming-soon-card::after {
+  left: 0;
+  background: rgba(232, 64, 124, 0.8);
+}
+
 .edge-shape {
   position: absolute;
   display: block;
@@ -601,8 +620,8 @@ svg {
 }
 
 .edge-shape--orange {
-  top: -4.6rem;
-  left: -4.5rem;
+  bottom: -4.8rem;
+  right: -4.8rem;
   width: 13rem;
   height: 13rem;
   background: rgba(244, 169, 61, 0.9);
@@ -611,10 +630,10 @@ svg {
 
 .edge-shape--pink {
   position: absolute;
-  top: -2.8rem;
-  right: -2.8rem;
-  width: 12rem;
-  height: 12rem;
+  top: -4.2rem;
+  right: -4.2rem;
+  width: 16rem;
+  height: 16rem;
   background: rgba(232, 64, 124, 0.8);
   clip-path: polygon(100% 0, 100% 100%, 0 0);
   z-index: 3;
@@ -636,10 +655,7 @@ svg {
 /* keep one triangle pink and one blue as intended */
 
 .edge-shape--peach {
-  bottom: -2.8rem;
-  right: -2.8rem;
-  background: rgba(41, 171, 226, 0.8);
-  clip-path: polygon(100% 100%, 100% 0, 0 100%);
+  display: none;
 }
 
 .card-content {
@@ -704,7 +720,7 @@ svg {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 1rem;
+  border-radius: 0;
   object-fit: cover;
 }
 
@@ -725,13 +741,13 @@ svg {
   transform: scale(0.98);
 }
 
-.logo-reveal-wrap:hover .logo-base,
-.logo-reveal-wrap:focus-within .logo-base {
+.logo-reveal-figure:hover .logo-base,
+.logo-reveal-figure:focus-within .logo-base {
   opacity: 0.15;
 }
 
-.logo-reveal-wrap:hover .logo-hover,
-.logo-reveal-wrap:focus-within .logo-hover {
+.logo-reveal-figure:hover .logo-hover,
+.logo-reveal-figure:focus-within .logo-hover {
   opacity: 1;
   transform: scale(1);
 }
